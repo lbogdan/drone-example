@@ -1,0 +1,18 @@
+---
+kind: pipeline
+name: branch
+
+steps:
+  - name: show environment
+    image: node:10.16.3-jessie
+    commands:
+      - printenv
+
+trigger:
+  event: push
+  branch: master
+---
+kind: signature
+hmac: 68ea45154c5d02c36af8d20d599b0ba40313d6c23193ef06b3b4cd779aaa4afd
+
+...
