@@ -33,7 +33,7 @@ name: deploy
 
 steps:
   - name: test deploy plugin
-    image: lbogdan/drone-deploy-plugin:v0.0.2
+    image: lbogdan/drone-deploy-plugin:v0.0.3
     settings:
       app_name: example-app
       repo: lbogdan/test-test
@@ -45,6 +45,6 @@ trigger:
     - promote
 ---
 kind: signature
-hmac: 0e430767f2fa1eab9c6200b04d7a12d265183b5274abffa64436036ec2f77830
+hmac: daf7a2dab91a7e7f3ce2579f604e25fb4c490cfd048e0cff8c4336e07f839b2e
 
 ...
