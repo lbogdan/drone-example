@@ -3,13 +3,10 @@ kind: pipeline
 name: build
 
 steps:
-  - name: test plugin
-    image: lbogdan/drone-deploy-plugin:v0.0.1
-    settings:
-      foo: bar
-      foo-bar: baz
-      ssh-key:
-        from_secret: ssh-key
+  - name: show environment
+    image: node:10.16.3-jessie
+    commands:
+      - printenv
 
   # - name: build and push image
   #   image: plugins/docker
@@ -35,16 +32,19 @@ kind: pipeline
 name: deploy
 
 steps:
-  - name: show environment
-    image: node:10.16.3-jessie
-    commands:
-      - printenv
+  - name: test deploy plugin
+    image: lbogdan/drone-deploy-plugin:v0.0.2
+    settings:
+      app_name: example-app
+      repo: lbogdan/test-test
+      ssh_key:
+        from_secret: ssh-key
 
 trigger:
   event:
     - promote
 ---
 kind: signature
-hmac: ec5afa473a7c321dcf6bb2bb752b4321ebefe7a50be186bb091a8629e2e1b1f8
+hmac: 0e430767f2fa1eab9c6200b04d7a12d265183b5274abffa64436036ec2f77830
 
 ...
