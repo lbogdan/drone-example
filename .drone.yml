@@ -7,6 +7,7 @@ steps:
     image: lbogdan/drone-deploy-plugin:v0.0.1
     settings:
       foo: bar
+      foo-bar: baz
 
   # - name: build and push image
   #   image: plugins/docker
@@ -42,6 +43,6 @@ trigger:
     - promote
 ---
 kind: signature
-hmac: 5193504c8ffd4386f26f91916b218c5ef5583f0b2eb894cc0b4372ddf3f48a2e
+hmac: a58a381ead4e067729f509c0d3cdec713c1dc3284b5f9c7cdfa5e3188f14bb78
 
 ...
