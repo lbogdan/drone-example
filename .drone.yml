@@ -33,19 +33,20 @@ name: deploy
 
 steps:
   - name: test deploy plugin
-    image: lbogdan/drone-deploy-plugin:v0.0.3
+    image: lbogdan/drone-deploy-plugin:v0.0.1
     settings:
       app_name: example-app
       repo: lbogdan/test-test
       ssh_key:
         from_secret: ssh-key
       env: test
+      file: /$$APP/$$ENV.yaml
 
 trigger:
   event:
     - promote
 ---
 kind: signature
-hmac: 6711902cb4c7a766afa3885135defd17ded77492c6bc6c9a04bac1eb217eabda
+hmac: afb12875e3d96ef075865888b449b6448ddccd6b2bff16aa854e7de56c29ecee
 
 ...
