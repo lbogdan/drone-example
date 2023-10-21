@@ -24,6 +24,9 @@ trigger:
   # branch: main
   ref:
     - refs/tags/v*
+  event:
+    exclude:
+      - promote
 ---
 kind: pipeline
 name: deploy
@@ -39,6 +42,6 @@ trigger:
     - promote
 ---
 kind: signature
-hmac: 8660efa9bd424ea1acadff2ffb6d4a1c94bef4963556174d540325e6d2f8c6ae
+hmac: d5f4d0e566496030d564d523551bc2c8c4ef2d2acb8402244ea2edd339e6b898
 
 ...
