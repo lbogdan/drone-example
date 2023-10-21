@@ -1,6 +1,6 @@
 ---
 kind: pipeline
-name: branch
+name: build
 
 steps:
   - name: show environment
@@ -23,9 +23,22 @@ trigger:
   # event: push
   # branch: main
   ref:
-  - refs/tags/v*
+    - refs/tags/v*
+---
+kind: pipeline
+name: deploy
+
+steps:
+  - name: show environment
+    image: node:10.16.3-jessie
+    commands:
+      - printenv
+
+trigger:
+  event:
+    - promote
 ---
 kind: signature
-hmac: 78ea1f776ae4426f9205ca0e325b0ef90a2e5995ce9c7e6ad865b0c9b66a30c5
+hmac: 8660efa9bd424ea1acadff2ffb6d4a1c94bef4963556174d540325e6d2f8c6ae
 
 ...
