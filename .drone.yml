@@ -9,10 +9,12 @@ steps:
       - printenv
 
 trigger:
-  event: push
-  branch: main
+  # event: push
+  # branch: main
+  ref:
+  - refs/tags/v*
 ---
 kind: signature
-hmac: 1891e4aee3a93637f1b18b85f80fbc456fad32cea9e716c0b14a67c71de0e3b4
+hmac: 9fcc1bd149694cc3c57cf9d4a15bade8e466afa448c059434a7c150c309b4e69
 
 ...
