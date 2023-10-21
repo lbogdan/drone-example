@@ -8,6 +8,17 @@ steps:
     commands:
       - printenv
 
+  - name: build and push image
+    image: plugins/docker
+    settings:
+      repo: lbogdan/drone-example
+      tags:
+      - latest
+      - ${DRONE_TAG}
+      username: lbogdan
+      password:
+        from_secret: docker-password
+
 trigger:
   # event: push
   # branch: main
@@ -15,6 +26,6 @@ trigger:
   - refs/tags/v*
 ---
 kind: signature
-hmac: 9fcc1bd149694cc3c57cf9d4a15bade8e466afa448c059434a7c150c309b4e69
+hmac: 78ea1f776ae4426f9205ca0e325b0ef90a2e5995ce9c7e6ad865b0c9b66a30c5
 
 ...
