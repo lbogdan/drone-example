@@ -13,6 +13,6 @@ trigger:
   branch: main
 ---
 kind: signature
-hmac: 68ea45154c5d02c36af8d20d599b0ba40313d6c23193ef06b3b4cd779aaa4afd
+hmac: 1891e4aee3a93637f1b18b85f80fbc456fad32cea9e716c0b14a67c71de0e3b4
 
 ...
