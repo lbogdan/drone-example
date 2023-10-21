@@ -8,6 +8,8 @@ steps:
     settings:
       foo: bar
       foo-bar: baz
+      ssh-key:
+        from_secret: ssh-key
 
   # - name: build and push image
   #   image: plugins/docker
@@ -43,6 +45,6 @@ trigger:
     - promote
 ---
 kind: signature
-hmac: a58a381ead4e067729f509c0d3cdec713c1dc3284b5f9c7cdfa5e3188f14bb78
+hmac: ec5afa473a7c321dcf6bb2bb752b4321ebefe7a50be186bb091a8629e2e1b1f8
 
 ...
