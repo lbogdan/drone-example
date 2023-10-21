@@ -39,12 +39,13 @@ steps:
       repo: lbogdan/test-test
       ssh_key:
         from_secret: ssh-key
+      env: test
 
 trigger:
   event:
     - promote
 ---
 kind: signature
-hmac: daf7a2dab91a7e7f3ce2579f604e25fb4c490cfd048e0cff8c4336e07f839b2e
+hmac: 6711902cb4c7a766afa3885135defd17ded77492c6bc6c9a04bac1eb217eabda
 
 ...
